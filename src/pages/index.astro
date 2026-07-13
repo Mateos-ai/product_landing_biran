@@ -57,11 +57,11 @@ const principles = [
 
 // ── The team ────────────────────────────────────────────────────────────────
 const team = [
-  { name: "Yair Nativ", role: "Founder & CEO", initials: "YN", bio: "A 3x, award-winning entrepreneur across tech and social impact, with a track record of founding AI and productivity ventures.", li: "https://www.linkedin.com/in/yairnativ/", color: "amber" },
-  { name: "David L. Rajcher", role: "Founder & CTO", initials: "DR", bio: "Engineer and 2x tech founder, ex-IDF technologist — a decade building and leading engineering teams from the ground up.", li: "https://www.linkedin.com/in/david-rajcher/", color: "teal" },
-  { name: "Aviv Yogev", role: "Founder & CBDO", initials: "AY", bio: "", li: "", color: "indigo" },
-  { name: "Noam Biran", role: "Head of Partnerships", initials: "NB", bio: "", li: "https://www.linkedin.com/in/birannoam/", color: "amber" },
-  { name: "Noam Mantel", role: "Head of Product", initials: "NM", bio: "Ex-VP of Product at Slack, with product leadership at AB InBev — 15+ years shipping complex B2B and B2C products at scale.", li: "https://www.linkedin.com/in/noammantel/", color: "teal" },
+  { name: "Yair Nativ", role: "Founder & CEO", initials: "YN", photo: "/yair-nativ.png", bio: "A 3x, award-winning entrepreneur across tech and social impact, with a track record of founding AI and productivity ventures.", li: "https://www.linkedin.com/in/yairnativ/", color: "amber" },
+  { name: "David L. Rajcher", role: "Founder & CTO", initials: "DR", photo: "/david-rajcher.png", bio: "Engineer and 2x tech founder, ex-IDF technologist — a decade building and leading engineering teams from the ground up.", li: "https://www.linkedin.com/in/david-rajcher/", color: "teal" },
+  { name: "Aviv Yogev", role: "Founder & CBDO", initials: "AY", photo: "", bio: "", li: "", color: "indigo" },
+  { name: "Noam Biran", role: "Head of Partnerships", initials: "NB", photo: "/noam-biran.jpeg", bio: "", li: "https://www.linkedin.com/in/birannoam/", color: "amber" },
+  { name: "Noam Mantel", role: "Head of Product", initials: "NM", photo: "/noam-mantel.jpeg", bio: "Ex-VP of Product at Slack, with product leadership at AB InBev — 15+ years shipping complex B2B and B2C products at scale.", li: "https://www.linkedin.com/in/noammantel/", color: "teal" },
 ];
 
 // Academic advisors (real experts; bios drawn from public sources).
@@ -70,6 +70,7 @@ const advisors = [
     name: "Prof. Michael Schrage",
     role: "AI KPIs Expert · MIT",
     initials: "MS",
+    photo: "/michael-schrage.webp",
     bio: "Research fellow at MIT Sloan's Initiative on the Digital Economy. His research on AI-enhanced KPIs reframes metrics as sources of strategic value — not merely measures of it.",
     li: "https://www.linkedin.com/in/mschrage/",
     color: "indigo",
@@ -78,6 +79,7 @@ const advisors = [
     name: "Prof. Nir Eisikovits",
     role: "AI Ethics Expert · UMass Boston",
     initials: "NE",
+    photo: "/nir-eisikovits.webp",
     bio: "Professor of philosophy and founding director of the Applied Ethics Center at UMass Boston. His recent work focuses on the ethics of AI and how working with it reshapes how we understand ourselves.",
     li: "https://www.linkedin.com/in/nir-eisikovits-8781018/",
     color: "amber",
@@ -332,7 +334,11 @@ const contact = {
         <div class="team-grid">
           {team.map((m) => (
             <article class={`member mem-${m.color}`} data-reveal>
-              <span class="member-avatar">{m.initials}</span>
+              {m.photo ? (
+                <img class="member-photo" src={m.photo} alt={m.name} width="84" height="84" loading="lazy" />
+              ) : (
+                <span class="member-avatar">{m.initials}</span>
+              )}
               <h3>{m.name}</h3>
               <div class="member-role">{m.role}</div>
               {m.bio && <p>{m.bio}</p>}
@@ -349,7 +355,11 @@ const contact = {
         <div class="team-grid advisors-grid">
           {advisors.map((m) => (
             <article class={`member mem-${m.color}`} data-reveal>
-              <span class="member-avatar">{m.initials}</span>
+              {m.photo ? (
+                <img class="member-photo" src={m.photo} alt={m.name} width="84" height="84" loading="lazy" />
+              ) : (
+                <span class="member-avatar">{m.initials}</span>
+              )}
               <h3>{m.name}</h3>
               <div class="member-role">{m.role}</div>
               {m.bio && <p>{m.bio}</p>}
@@ -828,6 +838,13 @@ const contact = {
   }
   .mem-teal .member-avatar { background: var(--teal-500); }
   .mem-indigo .member-avatar { background: var(--indigo-500); }
+  .member-photo {
+    width: 84px; height: 84px; border-radius: 50%; object-fit: cover; object-position: center top;
+    margin-bottom: 10px; background: var(--surface-muted);
+  }
+  .mem-amber .member-photo { box-shadow: 0 0 0 3px var(--color-primary-soft); }
+  .mem-teal .member-photo { box-shadow: 0 0 0 3px var(--color-accent-soft); }
+  .mem-indigo .member-photo { box-shadow: 0 0 0 3px var(--color-secondary-soft); }
   .member h3 { font-size: 1.15rem; }
   .member-role {
     font-family: var(--font-mono); font-size: 0.72rem; font-weight: 600; text-transform: uppercase;
