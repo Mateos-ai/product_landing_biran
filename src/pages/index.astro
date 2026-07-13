@@ -29,14 +29,14 @@ const journey = [
   { n: "01", icon: ICON.compass, title: "Diagnosis", sub: "We map your organization, your data and your workflows, and pinpoint where AI pays back first.", color: "amber" },
   { n: "02", icon: ICON.target, title: "First Win", sub: "A focused solution at your sharpest pain point, in any department, not just sales.", color: "teal" },
   { n: "03", icon: ICON.layers, title: "Expand", sub: "Agents and automations on the tools you already use, department by department.", color: "indigo" },
-  { n: "04", icon: ICON.brain, title: "The Organizational Brain", sub: "A single orchestrating layer: what one team learns, the whole company knows.", color: "gradient" },
+  { n: "04", icon: ICON.brain, title: "Company Brain", sub: "A single orchestrating layer: what one team learns, the whole company knows.", color: "gradient" },
 ];
 
 // ── Ways to work with us (secondary row) ────────────────────────────────────
 const ways = [
-  { icon: ICON.briefcase, title: "Fractional CAIO", sub: "A senior Chief AI Officer embedded in your leadership, part-time." },
-  { icon: ICON.cap, title: "Workshops", sub: "Hands-on sessions that get your people building with AI, fast." },
-  { icon: ICON.package, title: "Projects", sub: "A defined build with a clear scope, owned end to end." },
+  { icon: ICON.briefcase, title: "Fractional CAIO", sub: "A senior Chief AI Officer embedded in your leadership, part-time.", color: "amber" },
+  { icon: ICON.cap, title: "Workshops", sub: "Hands-on sessions that get your people building with AI, fast.", color: "teal" },
+  { icon: ICON.package, title: "Projects", sub: "A defined build with a clear scope, owned end to end.", color: "indigo" },
 ];
 
 // ── The adoption layer ──────────────────────────────────────────────────────
@@ -50,7 +50,7 @@ const adoption = [
 // ── How we work: principles ────────────────────────────────────────────────
 const principles = [
   { icon: ICON.crosshair, title: "Start at the sharpest pain", body: `A bottleneck on the production line, a swamped service desk, a finance close that eats a week. We start where it hurts most, in any function.`, color: "amber" },
-  { icon: ICON.layers, title: "Solve today, build for tomorrow", body: `Every solution ships value now <em>and</em> becomes a building block toward the organizational brain. Nothing is throwaway.`, color: "teal" },
+  { icon: ICON.layers, title: "Solve today, build for tomorrow", body: `Every solution ships value now <em>and</em> becomes a building block toward the Company Brain. Nothing is throwaway.`, color: "teal" },
   { icon: ICON.package, title: "Own it end to end", body: `Diagnosis, solution, implementation, training. Real work on the ground, not slide decks and hand-offs.`, color: "indigo" },
   { icon: ICON.refresh, title: "Every project compounds", body: `What we build for one team becomes knowledge the whole organization can reuse. The value accumulates.`, color: "amber" },
 ];
@@ -59,9 +59,8 @@ const principles = [
 const team = [
   { name: "Yair Nativ", role: "Founder & CEO", initials: "YN", photo: "/yair-nativ.png", bio: "A 3x, award-winning entrepreneur across tech and social impact, with a track record of founding AI and productivity ventures.", li: "https://www.linkedin.com/in/yairnativ/", color: "amber" },
   { name: "David L. Rajcher", role: "Founder & CTO", initials: "DR", photo: "/david-rajcher.png", bio: "Engineer and 2x tech founder, ex-IDF technologist with two decades building and leading engineering teams from the ground up.", li: "https://www.linkedin.com/in/david-rajcher/", color: "teal" },
-  { name: "Aviv Yogev", role: "Founder & CBDO", initials: "AY", photo: "", bio: "", li: "", color: "indigo" },
-  { name: "Noam Biran", role: "Head of Partnerships", initials: "NB", photo: "/noam-biran.jpeg", bio: "Founder of BIRANO, a B2B and B2B2C branding and marketing studio, bringing years of building brand and go-to-market for industrial companies.", li: "https://www.linkedin.com/in/birannoam/", color: "amber" },
-  { name: "Noam Mantel", role: "Head of Product", initials: "NM", photo: "/noam-mantel.jpeg", bio: "Ex-VP of Product at Slack, with product leadership at AB InBev. 15+ years shipping complex B2B and B2C products at scale.", li: "https://www.linkedin.com/in/noammantel/", color: "teal" },
+  { name: "Noam Biran", role: "Head of Partnerships", initials: "NB", photo: "/noam-biran.jpeg", bio: "Founder of BIRANO, a B2B and B2B2C branding and marketing studio, bringing years of building brand and go-to-market for industrial companies.", li: "https://www.linkedin.com/in/birannoam/", color: "indigo" },
+  { name: "Noam Mantel", role: "Head of Product", initials: "NM", photo: "/noam-mantel.jpeg", bio: "Ex-VP of Product at Slack, with product leadership at AB InBev. 15+ years shipping complex B2B and B2C products at scale.", li: "https://www.linkedin.com/in/noammantel/", color: "amber" },
 ];
 
 // Academic advisors (real experts; bios drawn from public sources).
@@ -133,7 +132,10 @@ const contact = {
       <nav class="nav-links" aria-label="Sections">
         <a href="#approach">Approach</a>
         <a href="#adoption">Adoption</a>
+        <a href="#how">How we work</a>
         <a href="#team">Team</a>
+        <a href="#examples">Examples</a>
+        <a href="#integrations">Integrations</a>
       </nav>
 
       <div class="nav-right">
@@ -176,7 +178,6 @@ const contact = {
           to a single layer that orchestrates your organization. And we train your people to run it.
         </p>
         <div class="hero-actions">
-          <a href="#pilot" class="btn-primary-lg">Start a Pilot →</a>
           <a href="#approach" class="btn-ghost-lg">See how it works ↓</a>
         </div>
       </div>
@@ -195,37 +196,16 @@ const contact = {
       </div>
     </section>
 
-    <!-- ── THE THESIS (animated reveal) ───────────────────────────────── -->
-    <section class="thesis-section" id="thesis">
-      <div class="wrap thesis-inner">
-        <p class="thesis-intro" id="thesis-intro"><span class="tw-cursor">|</span></p>
-        <div class="thesis-lines" id="thesis-lines">
-          <p class="thesis-line thesis-line-hidden" set:html={`It lands in scattered tools and <span class="imagine-hl">silos.</span>`} />
-          <p class="thesis-line thesis-line-hidden" set:html={`The value stays <span class="imagine-hl-teal">trapped.</span>`} />
-          <p class="thesis-line thesis-line-hidden" set:html={`We connect it into <span class="imagine-hl-purple">one system.</span>`} />
-          <p class="thesis-line thesis-line-hidden" set:html={`And get your people <span class="imagine-hl-gradient">running it.</span>`} />
-        </div>
-        <p class="thesis-sub" data-reveal>
-          Technology is the easy part. Moving a complex organization through the change,
-          getting your people to actually run it, is the hard part. That is where we live.
-        </p>
-      </div>
-    </section>
-
     <!-- ── WHAT WE DO: THE JOURNEY ───────────────────────────────────── -->
     <section class="approach-section" id="approach">
       <div class="wrap">
         <div class="section-header" data-reveal>
           <div class="eyebrow">What we do</div>
-          <h2>From your first automation to an <span class="gradient-text">organizational brain</span></h2>
+          <h2>From one automation to <span class="gradient-text">a Company Brain</span></h2>
           <p class="section-sub">A step-by-step journey, wrapped at every step by the change layer that makes it stick.</p>
         </div>
 
         <div class="journey" data-reveal>
-          <div class="journey-wrap-label">
-            <span class="wrap-icon" set:html={ICON.users} />
-            Change management · Training · Adoption, at every step
-          </div>
           <div class="journey-steps">
             {journey.map((step, i) => (
               <>
@@ -242,10 +222,13 @@ const contact = {
         </div>
 
         <div class="ways">
-          <p class="ways-label">Ways to work with us</p>
+          <div class="ways-head" data-reveal>
+            <div class="eyebrow">Ways to work with us</div>
+            <h3>Start where it fits your organization</h3>
+          </div>
           <div class="ways-grid">
             {ways.map((w) => (
-              <article class="way-card" data-reveal>
+              <article class={`way-card way-${w.color}`} data-reveal>
                 <span class="way-icon" set:html={w.icon} />
                 <h4>{w.title}</h4>
                 <p>{w.sub}</p>
@@ -261,7 +244,7 @@ const contact = {
       <div class="wrap adoption-grid">
         <div class="adoption-copy" data-reveal>
           <div class="eyebrow">The adoption layer</div>
-          <h2>Most AI projects don't fail on technology. They fail on <span class="gradient-text">adoption.</span></h2>
+          <h2>Technology is not enough, <span class="gradient-text">adoption is the missing piece.</span></h2>
           <p class="section-sub adoption-lead">
             Connecting the technology is the part everyone talks about. Getting hundreds of people
             to change how they work every day is the part that decides whether it lasts. It is the
@@ -574,11 +557,11 @@ const contact = {
   .brand-mark { height: 28px; width: auto; }
   .brand-name { font-family: var(--font-display); font-weight: 700; font-size: 1rem; letter-spacing: -0.02em; color: var(--text-primary); }
   .brand-ai { color: var(--amber-500); }
-  .nav-links { display: none; gap: 28px; margin-inline-start: auto; }
-  .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--text-secondary); transition: color 0.15s; }
+  .nav-links { display: none; gap: 22px; margin-inline-start: auto; }
+  .nav-links a { font-size: 0.88rem; font-weight: 500; color: var(--text-secondary); transition: color 0.15s; white-space: nowrap; }
   .nav-links a:hover { color: var(--text-primary); }
   .nav-right { display: flex; align-items: center; gap: 14px; }
-  @media (min-width: 900px) { .nav-links { display: flex; } .nav-right { margin-inline-start: 8px; } }
+  @media (min-width: 1024px) { .nav-links { display: flex; } .nav-right { margin-inline-start: 8px; } }
   .btn-cta {
     display: inline-block; background: var(--color-primary); color: var(--on-primary);
     font-weight: 600; font-size: 0.875rem; padding: 0.5rem 1.1rem;
@@ -652,57 +635,10 @@ const contact = {
   .values-close { color: var(--color-primary-text); }
   :global([data-theme="dark"]) .values-close { color: var(--amber-400); }
 
-  /* ── Thesis (animated) ───────────────────────────────────────────────── */
-  .thesis-section {
-    background: var(--neutral-900); padding: 96px 0; text-align: center;
-    display: flex; align-items: center; justify-content: center; min-height: 66vh;
-  }
-  .thesis-inner { max-width: 800px; width: 100%; }
-  .thesis-intro {
-    font-family: var(--font-display); font-size: clamp(1.4rem, 3.4vw, 2.2rem); font-weight: 600;
-    letter-spacing: -0.02em; color: #fff; margin-bottom: 30px; transition: color 1s ease;
-  }
-  .thesis-intro.is-gone { color: rgba(255,255,255,0.25); }
-  .thesis-lines { display: flex; flex-direction: column; gap: 16px; }
-  .thesis-line {
-    font-family: var(--font-display); font-size: clamp(1.7rem, 4.4vw, 3rem); font-weight: 700;
-    line-height: 1.15; letter-spacing: -0.02em; color: #fff; transition: color 0.65s ease;
-  }
-  .thesis-line.is-dim { color: rgba(255,255,255,0.4); }
-  .thesis-line-hidden {
-    opacity: 0; transform: translateY(22px) scale(0.98);
-    transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1);
-  }
-  .thesis-sub {
-    font-family: var(--font-body); font-size: clamp(1rem, 2vw, 1.2rem); font-weight: 400;
-    line-height: 1.7; color: rgba(255,255,255,0.6); margin-top: 44px; max-width: 620px; margin-inline: auto;
-  }
-  .tw-cursor { display: inline-block; color: var(--amber-500); animation: tw-blink 0.7s steps(1) infinite; font-weight: 300; }
-  @keyframes tw-blink { 0%,100%{opacity:1} 50%{opacity:0} }
-  .imagine-hl { color: var(--amber-500); }
-  .imagine-hl-teal { color: var(--teal-400); }
-  .imagine-hl-purple { color: var(--indigo-400); }
-  .imagine-hl-gradient { background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
 
   /* ── Approach / journey ──────────────────────────────────────────────── */
   .approach-section { padding: 104px 0; background: var(--surface); border-bottom: 1px solid var(--border); }
-  .journey {
-    position: relative; border-radius: var(--radius-xl); padding: 46px 28px 34px; margin-bottom: 64px;
-    background:
-      linear-gradient(var(--surface), var(--surface)) padding-box,
-      var(--gradient-brand) border-box;
-    border: 1.5px solid transparent;
-  }
-  .journey-wrap-label {
-    position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%);
-    display: inline-flex; align-items: center; gap: 9px; white-space: nowrap;
-    background: var(--surface); border: 1px solid var(--border-strong); border-radius: var(--radius-full);
-    padding: 8px 18px; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-secondary);
-    max-width: calc(100% - 24px); overflow: hidden; text-overflow: ellipsis;
-  }
-  .journey-wrap-label .wrap-icon { display: inline-flex; color: var(--amber-500); }
-  .journey-wrap-label .wrap-icon :global(svg) { width: 16px; height: 16px; }
+  .journey { margin-bottom: 8px; }
   .journey-steps { display: flex; flex-direction: column; gap: 8px; align-items: stretch; }
   .journey-step {
     flex: 1; background: var(--surface-subtle); border: 1px solid var(--border);
@@ -725,28 +661,41 @@ const contact = {
       var(--gradient-brand) border-box;
   }
   .jstep-gradient .journey-icon { color: var(--indigo-500); }
+  .jstep-gradient .journey-icon :global(svg) { stroke: url(#g); }
   .journey-arrow { display: none; color: var(--border-strong); font-size: 1.4rem; align-self: center; }
   @media (min-width: 860px) {
     .journey-steps { flex-direction: row; align-items: stretch; }
     .journey-arrow { display: block; }
   }
 
-  .ways-label {
-    text-align: center; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 22px;
-  }
-  .ways-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
-  @media (min-width: 640px) { .ways-grid { grid-template-columns: repeat(3, 1fr); } }
+  .ways { margin-top: 96px; padding-top: 72px; border-top: 1px solid var(--border); }
+  .ways-head { text-align: center; margin-bottom: 44px; }
+  .ways-head .eyebrow { justify-content: center; }
+  .ways-head h3 { font-size: clamp(1.6rem, 3.4vw, 2.4rem); }
+  .ways-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+  @media (min-width: 720px) { .ways-grid { grid-template-columns: repeat(3, 1fr); } }
   .way-card {
-    background: var(--surface-subtle); border: 1px solid var(--border); border-radius: var(--radius-lg);
-    padding: 24px; display: flex; flex-direction: column; gap: 8px; transition: border-color 0.2s, box-shadow 0.2s;
+    background: var(--surface-subtle); border: 1px solid var(--border); border-radius: var(--radius-xl);
+    border-top: 3px solid var(--amber-500);
+    padding: 40px 32px; display: flex; flex-direction: column; gap: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
   }
-  .way-card:hover { border-color: var(--border-strong); box-shadow: var(--shadow-sm); }
-  .way-icon { color: var(--amber-600); display: inline-flex; }
-  :global([data-theme="dark"]) .way-icon { color: var(--amber-400); }
-  .way-icon :global(svg) { width: 24px; height: 24px; }
-  .way-card h4 { font-size: 1rem; }
-  .way-card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
+  .way-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+  .way-teal { border-top-color: var(--teal-500); }
+  .way-indigo { border-top-color: var(--indigo-500); }
+  .way-icon {
+    width: 54px; height: 54px; border-radius: var(--radius-md);
+    display: flex; align-items: center; justify-content: center;
+    background: var(--color-primary-soft); color: var(--amber-600);
+  }
+  .way-teal .way-icon { background: var(--color-accent-soft); color: var(--teal-600); }
+  .way-indigo .way-icon { background: var(--color-secondary-soft); color: var(--indigo-600); }
+  :global([data-theme="dark"]) .way-amber .way-icon { color: var(--amber-400); }
+  :global([data-theme="dark"]) .way-teal .way-icon { color: var(--teal-400); }
+  :global([data-theme="dark"]) .way-indigo .way-icon { color: var(--indigo-400); }
+  .way-icon :global(svg) { width: 27px; height: 27px; }
+  .way-card h4 { font-size: 1.25rem; }
+  .way-card p { font-size: 0.96rem; color: var(--text-secondary); line-height: 1.65; }
 
   /* ── Adoption layer ──────────────────────────────────────────────────── */
   .adoption-section { padding: 104px 0; background: var(--surface-subtle); border-bottom: 1px solid var(--border); }
@@ -827,8 +776,8 @@ const contact = {
 
   /* ── Team ────────────────────────────────────────────────────────────── */
   .team-section { padding: 104px 0; background: var(--surface-subtle); border-bottom: 1px solid var(--border); }
-  .team-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
-  @media (min-width: 720px) { .team-grid { grid-template-columns: repeat(3, 1fr); } }
+  .team-grid { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 860px; margin-inline: auto; }
+  @media (min-width: 720px) { .team-grid { grid-template-columns: repeat(2, 1fr); } }
   .member {
     background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
     padding: 32px 28px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px;
@@ -997,7 +946,6 @@ const contact = {
   :global([data-theme="dark"]) .adoption-section,
   :global([data-theme="dark"]) .team-section,
   :global([data-theme="dark"]) .demos-section { background: #1C1C2B; }
-  :global([data-theme="dark"]) .journey-wrap-label,
   :global([data-theme="dark"]) .cc-ring-label { background: var(--surface-muted); }
 
   /* ── Scroll reveal ───────────────────────────────────────────────────── */
@@ -1008,7 +956,6 @@ const contact = {
   [data-reveal].is-visible { opacity: 1; transform: translateY(0) scale(1); }
   @media (prefers-reduced-motion: reduce) {
     [data-reveal] { opacity: 1; transform: none; transition: none; }
-    .thesis-line-hidden { opacity: 1 !important; transform: none !important; }
   }
 
   /* ── Mobile ──────────────────────────────────────────────────────────── */
@@ -1019,8 +966,7 @@ const contact = {
     .approach-section, .adoption-section, .principles-section,
     .team-section, .proof-section, .demos-section,
     .integrations-section, .pilot-section { padding: 60px 0; }
-    .thesis-section { padding: 64px 0; min-height: 60vh; }
-    .journey { padding: 40px 16px 26px; }
+    .ways { margin-top: 56px; padding-top: 48px; }
     .footer-inner { flex-direction: column; }
     .section-header { margin-bottom: 40px; }
   }
@@ -1087,53 +1033,6 @@ const contact = {
         if (v.dataset.live === "1") { sources(v, theme()); if (!reduce) v.play().catch(function () {}); }
       });
     }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
-  })();
-
-  // ── Thesis: typewriter intro, then the reveal lines ────────────────────
-  (function () {
-    var introEl = document.getElementById("thesis-intro");
-    var lines = document.querySelectorAll("#thesis-lines .thesis-line-hidden");
-    var section = document.getElementById("thesis");
-    if (!introEl || !section) return;
-    var text = "AI is already arriving in your organization.";
-
-    function revealLines() {
-      lines.forEach(function (line, i) {
-        setTimeout(function () {
-          line.style.opacity = "1";
-          line.style.transform = "translateY(0) scale(1)";
-          if (i > 0) lines[i - 1].classList.add("is-dim");
-        }, i * 720);
-      });
-      var last = lines.length - 1;
-      if (last >= 0) setTimeout(function () { lines[last].classList.add("is-dim"); }, lines.length * 720);
-    }
-
-    function runTypewriter() {
-      var i = 0;
-      var cursor = '<span class="tw-cursor">|</span>';
-      var interval = setInterval(function () {
-        i++;
-        introEl.innerHTML = text.slice(0, i) + cursor;
-        if (i === text.length) {
-          clearInterval(interval);
-          introEl.innerHTML = text;
-          setTimeout(function () { introEl.classList.add("is-gone"); revealLines(); }, 250);
-        }
-      }, 55);
-    }
-
-    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce) {
-      introEl.textContent = text; introEl.classList.add("is-gone");
-      lines.forEach(function (l) { l.style.opacity = "1"; l.style.transform = "none"; });
-      return;
-    }
-    var started = false;
-    var tw = new IntersectionObserver(function (entries) {
-      if (entries[0].isIntersecting && !started) { started = true; tw.disconnect(); setTimeout(runTypewriter, 220); }
-    }, { threshold: 0.35 });
-    tw.observe(section);
   })();
 
   // ── Smooth scroll + focus the pilot form from CTAs ─────────────────────
