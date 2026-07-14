@@ -22,6 +22,7 @@ const ICON = {
   mail: s(`<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/>`),
   phone: s(`<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>`),
   linkedin: s(`<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-11h4v1.5a4 4 0 0 1 6 2.5"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>`),
+  whatsapp: `<svg width="22" height="22" viewBox="0 0 778.72 778.72" fill="currentColor"><path d="M524.354 440.616c-6.936-3.47-41.036-20.245-47.395-22.558-6.357-2.314-10.98-3.471-15.604 3.47-4.624 6.942-17.916 22.559-21.963 27.187-4.045 4.627-8.09 5.207-15.026 1.735-6.936-3.47-29.284-10.792-55.776-34.415-20.62-18.384-34.54-41.092-38.586-48.033-4.045-6.942-.43-10.694 3.043-14.151 3.119-3.105 6.935-8.097 10.403-12.147 3.468-4.05 4.624-6.941 6.936-11.568 2.312-4.628 1.156-8.677-.58-12.148-1.732-3.47-15.603-37.598-21.383-51.481-5.63-13.52-11.348-11.69-15.605-11.903-4.042-.201-8.67-.244-13.294-.244-4.624 0-12.137 1.736-18.496 8.676-6.357 6.942-24.274 23.718-24.274 57.844 0 34.128 24.853 67.099 28.32 71.727 3.469 4.628 48.909 74.663 118.485 104.696 16.548 7.144 29.468 11.41 39.54 14.607 16.616 5.276 31.736 4.532 43.687 2.746 13.325-1.99 41.036-16.774 46.816-32.97 5.778-16.196 5.778-30.08 4.045-32.971-1.733-2.892-6.357-4.628-13.293-8.099M397.8 613.355h-.093c-41.4-.016-82.005-11.133-117.428-32.148l-8.425-5-87.322 22.9 23.308-85.11-5.486-8.726c-23.095-36.723-35.292-79.167-35.275-122.747.05-127.168 103.55-230.628 230.813-230.628 61.624.024 119.552 24.047 163.112 67.642 43.56 43.596 67.536 101.545 67.512 163.173-.052 127.177-103.55 230.644-230.716 230.644M594.158 186.41c-52.408-52.452-122.104-81.352-196.36-81.381-153 0-277.524 124.476-277.586 277.477-.02 48.908 12.762 96.65 37.052 138.73l-39.38 143.797 147.152-38.587c40.544 22.107 86.192 33.756 132.65 33.776h.116c152.985 0 277.52-124.492 277.582-277.495.028-74.146-28.817-143.866-81.226-196.317" fill-rule="evenodd"/></svg>`,
   trendingUp: s(`<polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>`),
   checkCircle: s(`<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>`),
   cycle3: s(`<g stroke="var(--amber-500)" fill="var(--amber-500)"><path d="M12 4 Q18 4 18 9" fill="none"/><polygon points="15.5 8 20.5 8 18 11.5"/></g><g stroke="var(--teal-500)" fill="var(--teal-500)" transform="rotate(120 12 12)"><path d="M12 4 Q18 4 18 9" fill="none"/><polygon points="15.5 8 20.5 8 18 11.5"/></g><g stroke="var(--indigo-500)" fill="var(--indigo-500)" transform="rotate(240 12 12)"><path d="M12 4 Q18 4 18 9" fill="none"/><polygon points="15.5 8 20.5 8 18 11.5"/></g>`),
@@ -126,8 +127,9 @@ const integrations = [
 // ── Contact (placeholders, replace with real details) ──────────────────────
 const contact = {
   email: "hello@mateos.ai",
-  phone: "+972 54 488 9533",
+  phone: "+972 50 555 9748",
   linkedin: "https://www.linkedin.com/company/mateos-ai",
+  whatsapp: "https://wa.me/972505559748",
 };
 ---
 
@@ -546,6 +548,7 @@ const contact = {
       <div class="footer-contact">
         <a href={`mailto:${contact.email}`}><span set:html={ICON.mail} />{contact.email}</a>
         <a href={`tel:${contact.phone.replace(/\s/g, "")}`}><span set:html={ICON.phone} />{contact.phone}</a>
+        <a href={contact.whatsapp} target="_blank" rel="noopener"><span set:html={ICON.whatsapp} />WhatsApp</a>
         <a href={contact.linkedin} target="_blank" rel="noopener"><span set:html={ICON.linkedin} />LinkedIn</a>
       </div>
     </div>
@@ -553,6 +556,10 @@ const contact = {
       <span class="footer-copy">2026 · © Mateos · All rights reserved.</span>
     </div>
   </footer>
+
+  <a class="whatsapp-fab" href={contact.whatsapp} target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+    <span set:html={ICON.whatsapp} />
+  </a>
 </Layout>
 
 <style>
@@ -986,6 +993,21 @@ const contact = {
   .footer-contact :global(svg) { width: 17px; height: 17px; color: var(--text-muted); }
   .footer-copy-row { padding-top: 24px; }
   .footer-copy { font-size: 0.8rem; color: var(--text-muted); }
+
+  /* ── WhatsApp floating button ─────────────────────────────────────────── */
+  .whatsapp-fab {
+    position: fixed; right: 22px; bottom: 22px; z-index: 90;
+    width: 58px; height: 58px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background: #25D366; color: #fff; box-shadow: var(--shadow-lg);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .whatsapp-fab:hover { transform: translateY(-2px) scale(1.05); box-shadow: var(--shadow-xl); }
+  .whatsapp-fab :global(svg) { width: 45px; height: 45px; }
+  @media (max-width: 639px) {
+    .whatsapp-fab { right: 16px; bottom: 16px; width: 52px; height: 52px; }
+    .whatsapp-fab :global(svg) { width: 39px; height: 39px; }
+  }
 
   /* ── Dark-mode section differentiation ──────────────────────────────── */
   :global([data-theme="dark"]) .adoption-section,

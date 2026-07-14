@@ -1,6 +1,9 @@
 import { defineConfig } from "astro/config";
 
+import sitemap from "@astrojs/sitemap";
+
 export default defineConfig({
-  site: "https://partners.mateos.ai",
+  site: "https://industry.mateos.ai",
   output: "static",
+  integrations: [sitemap()],
 });
