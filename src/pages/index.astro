@@ -22,21 +22,31 @@ const ICON = {
   mail: s(`<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/>`),
   phone: s(`<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>`),
   linkedin: s(`<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-11h4v1.5a4 4 0 0 1 6 2.5"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>`),
+  trendingUp: s(`<polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>`),
+  checkCircle: s(`<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>`),
+  cycle3: s(`<g stroke="var(--amber-500)" fill="var(--amber-500)"><path d="M12 4 Q18 4 18 9" fill="none"/><polygon points="15.5 8 20.5 8 18 11.5"/></g><g stroke="var(--teal-500)" fill="var(--teal-500)" transform="rotate(120 12 12)"><path d="M12 4 Q18 4 18 9" fill="none"/><polygon points="15.5 8 20.5 8 18 11.5"/></g><g stroke="var(--indigo-500)" fill="var(--indigo-500)" transform="rotate(240 12 12)"><path d="M12 4 Q18 4 18 9" fill="none"/><polygon points="15.5 8 20.5 8 18 11.5"/></g>`),
 };
 
 // ── What We Do: the journey (four steps) ──────────────────────────────────
 const journey = [
-  { n: "01", icon: ICON.compass, title: "Diagnosis", sub: "We map your organization, your data and your workflows, and pinpoint where AI pays back first.", color: "amber" },
-  { n: "02", icon: ICON.target, title: "First Win", sub: "A focused solution at your sharpest pain point, in any department, not just sales.", color: "teal" },
-  { n: "03", icon: ICON.layers, title: "Expand", sub: "Agents and automations on the tools you already use, department by department.", color: "indigo" },
-  { n: "04", icon: ICON.brain, title: "Company Brain", sub: "A single orchestrating layer: what one team learns, the whole company knows.", color: "gradient" },
+  { n: "01", icon: ICON.compass, title: "Diagnose Deep", sub: "We map your organization, your data and your workflows, and pinpoint where AI pays back first, in any department.", color: "amber" },
+  { n: "02", icon: ICON.checkCircle, title: "Prove", sub: "A focused solution at your sharpest pain point, measured against agreed results in weeks, not promises.", color: "teal" },
+  { n: "03", icon: ICON.cycle3, title: "Replicate", sub: "Agents and automations roll out department by department, building toward one orchestrating Company Brain.", color: "gradient" },
 ];
 
 // ── Ways to work with us (secondary row) ────────────────────────────────────
 const ways = [
-  { icon: ICON.briefcase, title: "Fractional CAIO", sub: "A senior Chief AI Officer embedded in your leadership, part-time.", color: "amber" },
-  { icon: ICON.cap, title: "Workshops", sub: "Hands-on sessions that get your people building with AI, fast.", color: "teal" },
-  { icon: ICON.package, title: "Projects", sub: "A defined build with a clear scope, owned end to end.", color: "indigo" },
+  { icon: ICON.briefcase, title: "Fractional CAIO", sub: "A senior Chief AI Officer embedded in your leadership, driving the platform and the roadmap, part-time.", color: "amber" },
+  { icon: ICON.cap, title: "Workshops", sub: "Hands-on sessions that get your people building with our agents, fast.", color: "teal" },
+  { icon: ICON.package, title: "Projects", sub: "A defined build on our platform, with a clear scope, owned end to end.", color: "indigo" },
+];
+
+// ── The platform: software, not just people ─────────────────────────────────
+const platform = [
+  { icon: ICON.cpu, title: "Agents", color: "amber", sub: "Purpose-built AI agents wired into the tools you already run on." },
+  { icon: ICON.trendingUp, title: "Learning", color: "teal", sub: "Every agent is evaluated and improves with every run." },
+  { icon: ICON.layers, title: "Data Analysis", color: "indigo", sub: "Your operational data, turned into the signals that make agents useful." },
+  { icon: ICON.target, title: "Company Brain", color: "gradient", sub: "An Orchestrating Layer: What one team learns, the whole company knows." },
 ];
 
 // ── The adoption layer ──────────────────────────────────────────────────────
@@ -44,7 +54,6 @@ const adoption = [
   { icon: ICON.spark, title: "A structured adoption program", sub: "Built around how your people actually work, not a generic rollout." },
   { icon: ICON.cap, title: "Training on the systems we build", sub: "Your teams learn the exact tools we deploy for you, hands-on." },
   { icon: ICON.users, title: "Champions inside your organization", sub: "We grow internal owners who carry the change forward." },
-  { icon: ICON.shield, title: "Close accompaniment until it sticks", sub: "We stay on the ground until the new way of working is the norm." },
 ];
 
 // ── How we work: principles ────────────────────────────────────────────────
@@ -59,15 +68,17 @@ const principles = [
 const team = [
   { name: "Yair Nativ", role: "Founder & CEO", initials: "YN", photo: "/yair-nativ.png", bio: "A 3x, award-winning entrepreneur across tech and social impact, with a track record of founding AI and productivity ventures.", li: "https://www.linkedin.com/in/yairnativ/", color: "amber" },
   { name: "David L. Rajcher", role: "Founder & CTO", initials: "DR", photo: "/david-rajcher.png", bio: "Engineer and 2x tech founder, ex-IDF technologist with two decades building and leading engineering teams from the ground up.", li: "https://www.linkedin.com/in/david-rajcher/", color: "teal" },
-  { name: "Noam Biran", role: "Head of Partnerships", initials: "NB", photo: "/noam-biran.jpeg", bio: "Founder of BIRANO, a B2B and B2B2C branding and marketing studio, bringing years of building brand and go-to-market for industrial companies.", li: "https://www.linkedin.com/in/birannoam/", color: "indigo" },
-  { name: "Noam Mantel", role: "Head of Product", initials: "NM", photo: "/noam-mantel.jpeg", bio: "Ex-VP of Product at Slack, with product leadership at AB InBev. 15+ years shipping complex B2B and B2C products at scale.", li: "https://www.linkedin.com/in/noammantel/", color: "amber" },
+  { name: "Aviv Yogev", role: "Founder & COO", initials: "AY", color: "indigo" },
+  { name: "Noam Biran", role: "Head of Partnerships", initials: "NB", photo: "/noam-biran.jpeg", bio: "Former industrialist and founder of BIRANO, a B2B and B2B2C branding and marketing studio. Board member of the Manufacturers Association of Israel and a member of the Chamber of Commerce.", li: "https://www.linkedin.com/in/birannoam/", color: "amber" },
+  { name: "Noam Mantel", role: "Head of Product", initials: "NM", photo: "/noam-mantel.jpeg", bio: "Ex-VP of Product at Slack, with product leadership at AB InBev. 15+ years shipping complex B2B and B2C products at scale.", li: "https://www.linkedin.com/in/noammantel/", color: "teal" },
+  { name: "Shayna Moliver", role: "Chief of Staff", initials: "SM", photo: "/shayna-moliver.jpeg", bio: "Chief of Staff for hire across startups, growth-stage companies and boutique consulting firms in Israel and the US. Board member of the National Giving Alliance and the Park Slope Food Coop.", li: "https://www.linkedin.com/in/shaynamoliver/", color: "indigo" },
 ];
 
 // Academic advisors (real experts; bios drawn from public sources).
 const advisors = [
   {
     name: "Prof. Michael Schrage",
-    role: "AI KPIs Expert · MIT",
+    role: "AI KPIs Advisor",
     initials: "MS",
     photo: "/michael-schrage.webp",
     bio: "Research fellow at MIT Sloan's Initiative on the Digital Economy. His research on AI-enhanced KPIs reframes metrics as sources of strategic value, not merely measures of it.",
@@ -76,7 +87,7 @@ const advisors = [
   },
   {
     name: "Prof. Nir Eisikovits",
-    role: "AI Ethics Expert · UMass Boston",
+    role: "AI Ethics Advisor",
     initials: "NE",
     photo: "/nir-eisikovits.webp",
     bio: "Professor of philosophy and founding director of the Applied Ethics Center at UMass Boston. His recent work focuses on the ethics of AI and how working with it reshapes how we understand ourselves.",
@@ -131,6 +142,7 @@ const contact = {
 
       <nav class="nav-links" aria-label="Sections">
         <a href="#approach">Approach</a>
+        <a href="#platform">Platform</a>
         <a href="#adoption">Adoption</a>
         <a href="#how">How we work</a>
         <a href="#team">Team</a>
@@ -170,29 +182,20 @@ const contact = {
       <div class="wrap hero-inner">
         <img src="/mateos-logo-secondary.svg" alt="" class="hero-logo" />
         <h1>
-          AI that transforms your organization.<br />
-          <span class="gradient-text">People who make it stick.</span>
+          From Complexity to Efficiency:<br />
+          <span class="gradient-text">AI Automation Built for Industrial Growth.</span>
         </h1>
         <p class="hero-tagline">
-          We implement AI and automation step by step, from your first focused solution
-          to a single layer that orchestrates your organization. And we train your people to run it.
+          We build the software, deploy it inside your organization, and take ownership
+          of the result. Then we train your people to run it.
         </p>
+        <div class="hero-kpi">
+          <span class="hero-kpi-dot" aria-hidden="true"></span>
+          25% of our fee is tied to your KPIs.
+        </div>
         <div class="hero-actions">
           <a href="#approach" class="btn-ghost-lg">See how it works ↓</a>
         </div>
-      </div>
-    </section>
-
-    <!-- ── MOTTO / VALUES STRIP ───────────────────────────────────────── -->
-    <section class="values">
-      <div class="wrap values-inner">
-        <span>Simplicity</span>
-        <span class="values-dot" aria-hidden="true">·</span>
-        <span>Professionalism</span>
-        <span class="values-dot" aria-hidden="true">·</span>
-        <span>Integrity</span>
-        <span class="values-dot" aria-hidden="true">·</span>
-        <span class="values-close">We close the distance</span>
       </div>
     </section>
 
@@ -201,7 +204,7 @@ const contact = {
       <div class="wrap">
         <div class="section-header" data-reveal>
           <div class="eyebrow">What we do</div>
-          <h2>From one automation to <span class="gradient-text">a Company Brain</span></h2>
+          <h2>Not Just Automation.<br /><span class="gradient-text">A Company Brain.</span></h2>
           <p class="section-sub">A step-by-step journey, wrapped at every step by the change layer that makes it stick.</p>
         </div>
 
@@ -239,6 +242,36 @@ const contact = {
       </div>
     </section>
 
+    <!-- ── THE PLATFORM: SOFTWARE, NOT JUST PEOPLE ───────────────────── -->
+    <section class="platform-section" id="platform">
+      <div class="wrap">
+        <div class="section-header" data-reveal>
+          <div class="eyebrow">The platform</div>
+          <h2>Software, <span class="gradient-text">not just people</span></h2>
+          <p class="section-sub">
+            Most of what you'll see in this space is an agency: people, billed by the hour.
+            This is the technology we own and keep building on your behalf.
+          </p>
+        </div>
+        <div class="platform-grid">
+          {platform.map((p, i) => (
+            <>
+              <article class={`platform-card pf-${p.color}`} data-reveal>
+                <span class="platform-icon" set:html={p.icon} />
+                <h3>{p.title}</h3>
+                <p>{p.sub}</p>
+              </article>
+              {i < platform.length - 1 && (
+                <span class={`platform-op${i === platform.length - 2 ? " platform-op-eq" : ""}`} aria-hidden="true">
+                  {i === platform.length - 2 ? "=" : "+"}
+                </span>
+              )}
+            </>
+          ))}
+        </div>
+      </div>
+    </section>
+
     <!-- ── THE ADOPTION LAYER ─────────────────────────────────────────── -->
     <section class="adoption-section" id="adoption">
       <div class="wrap adoption-grid">
@@ -267,12 +300,11 @@ const contact = {
         <!-- Concentric-circles motif: technology core, wrapped by the change layer -->
         <div class="cc-wrap" data-reveal aria-hidden="true">
           <div class="cc cc-outer">
-            <span class="cc-ring-label cc-label-outer">Change · Training · Adoption</span>
+            <span class="cc-ring-label cc-label-outer">Adoption &amp; Training</span>
             <div class="cc cc-mid">
-              <span class="cc-ring-label cc-label-mid">Agents on your tools</span>
+              <span class="cc-ring-label cc-label-mid">Agents</span>
               <div class="cc cc-core">
-                <span class="cc-core-icon" set:html={ICON.cpu} />
-                <span class="cc-core-text">Technology<br />core</span>
+                <span class="cc-core-text">Company<br />Brain</span>
               </div>
             </div>
           </div>
@@ -307,7 +339,7 @@ const contact = {
       <div class="wrap">
         <div class="section-header" data-reveal>
           <div class="eyebrow">The team</div>
-          <h2>Serious people who understand organizations like yours</h2>
+          <h2><span class="gradient-text">Serious people who understand</span> organizations like yours</h2>
           <p class="section-sub">
             CEOs buy from people. Our founding partners bring senior experience across technology,
             business and change management inside complex organizations.
@@ -315,28 +347,7 @@ const contact = {
         </div>
 
         <div class="team-grid">
-          {team.map((m) => (
-            <article class={`member mem-${m.color}`} data-reveal>
-              {m.photo ? (
-                <img class="member-photo" src={m.photo} alt={m.name} width="84" height="84" loading="lazy" />
-              ) : (
-                <span class="member-avatar">{m.initials}</span>
-              )}
-              <h3>{m.name}</h3>
-              <div class="member-role">{m.role}</div>
-              {m.bio && <p>{m.bio}</p>}
-              {m.li && (
-                <a class="member-li" href={m.li} target="_blank" rel="noopener" aria-label={`${m.name} on LinkedIn`}>
-                  <span set:html={ICON.linkedin} /> LinkedIn
-                </a>
-              )}
-            </article>
-          ))}
-        </div>
-
-        <p class="team-subhead" data-reveal>Advisors</p>
-        <div class="team-grid advisors-grid">
-          {advisors.map((m) => (
+          {[...team, ...advisors].map((m) => (
             <article class={`member mem-${m.color}`} data-reveal>
               {m.photo ? (
                 <img class="member-photo" src={m.photo} alt={m.name} width="84" height="84" loading="lazy" />
@@ -529,7 +540,7 @@ const contact = {
           </svg>
           <span class="brand-name">mateos<span class="brand-ai">.ai</span></span>
         </div>
-        <p class="footer-tag">AI that transforms your organization. People who make it stick.</p>
+        <p class="footer-tag">Your AI partner. Not an agency. Not consulting. 25% of our fee is tied to your KPIs.</p>
       </div>
 
       <div class="footer-contact">
@@ -600,14 +611,21 @@ const contact = {
   .hero-inner { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 22px; }
   .hero-logo { height: 64px; width: auto; margin-bottom: 4px; }
   .hero h1 {
-    font-size: clamp(2.5rem, 6.5vw, 5rem); color: var(--hero-heading);
-    line-height: 1.04; letter-spacing: -0.03em; max-width: 15ch;
+    font-size: clamp(2rem, 5vw, 3.75rem); color: var(--hero-heading);
+    line-height: 1.12; letter-spacing: -0.02em; max-width: 30ch;
   }
   .hero-tagline {
     font-size: clamp(1.05rem, 2vw, 1.3rem); font-weight: 400; color: var(--hero-body);
     line-height: 1.6; max-width: 640px;
   }
   .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; justify-content: center; margin-top: 10px; }
+  .hero-kpi {
+    display: inline-flex; align-items: center; gap: 9px; font-family: var(--font-mono);
+    font-size: 0.85rem; font-weight: 600; color: var(--hero-heading);
+    background: var(--hero-pill-bg); border: 1px solid var(--hero-pill-border);
+    border-radius: var(--radius-full); padding: 8px 18px; margin-top: 4px;
+  }
+  .hero-kpi-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gradient-brand); flex-shrink: 0; }
 
   /* Buttons */
   .btn-primary-lg {
@@ -618,22 +636,20 @@ const contact = {
   .btn-primary-lg:hover { background: var(--color-primary-hover); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
   .btn-ghost-lg {
     display: inline-block; font-size: 0.98rem; color: var(--hero-ghost-text);
-    padding: 0.8rem 1.4rem; border-radius: var(--radius-sm); border: 1px solid var(--hero-ghost-border);
-    transition: border-color 0.2s, color 0.2s;
+    padding: 0.8rem 1.4rem; border-radius: var(--radius-sm); border: 1px solid transparent;
+    transition: color 0.2s; position: relative; z-index: 0;
   }
-  .btn-ghost-lg:hover { border-color: var(--color-primary); color: var(--color-primary-text); }
+  .btn-ghost-lg::before {
+    content: ''; position: absolute; inset: -1px; border-radius: calc(var(--radius-sm) + 1px);
+    padding: 1px; background: linear-gradient(90deg, var(--amber-500), var(--teal-500), var(--indigo-500), var(--amber-500));
+    background-size: 300% 100%;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out; mask-composite: exclude;
+    animation: btn-glow-move 2s linear infinite; z-index: -1;
+  }
+  @keyframes btn-glow-move { 0% { background-position: 0% 50%; } 100% { background-position: 300% 50%; } }
+  .btn-ghost-lg:hover { color: var(--color-primary-text); }
   :global([data-theme="dark"]) .btn-ghost-lg { color: rgba(255,255,255,0.85); }
-
-  /* ── Values / motto strip ────────────────────────────────────────────── */
-  .values { background: var(--surface); border-bottom: 1px solid var(--border); color: var(--text-secondary); padding: 20px 0; }
-  .values-inner {
-    display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 18px;
-    font-family: var(--font-mono); font-size: 0.82rem; font-weight: 500;
-    text-transform: uppercase; letter-spacing: 0.14em;
-  }
-  .values-dot { opacity: 0.4; }
-  .values-close { color: var(--color-primary-text); }
-  :global([data-theme="dark"]) .values-close { color: var(--amber-400); }
 
 
   /* ── Approach / journey ──────────────────────────────────────────────── */
@@ -697,6 +713,44 @@ const contact = {
   .way-card h4 { font-size: 1.25rem; }
   .way-card p { font-size: 0.96rem; color: var(--text-secondary); line-height: 1.65; }
 
+  /* ── Platform (software, not just people) ─────────────────────────────── */
+  .platform-section { padding: 104px 0; background: var(--surface-subtle); border-bottom: 1px solid var(--border); }
+  .platform-grid { display: flex; flex-direction: column; gap: 12px; align-items: stretch; }
+  @media (min-width: 900px) { .platform-grid { flex-direction: row; align-items: center; } }
+  .platform-op {
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-mono); font-weight: 700; font-size: 1.5rem;
+    color: var(--border-strong); flex-shrink: 0; padding: 2px 0;
+  }
+  @media (min-width: 900px) { .platform-op { padding: 0 6px; } }
+  .platform-op-eq { color: var(--indigo-500); }
+  :global([data-theme="dark"]) .platform-op-eq { color: var(--indigo-400); }
+  .platform-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
+    border-top: 3px solid var(--amber-500); padding: 26px 22px; flex: 1; min-width: 0;
+    display: flex; flex-direction: column; align-items: flex-start; gap: 10px;
+  }
+  .pf-teal { border-top-color: var(--teal-500); }
+  .pf-indigo { border-top-color: var(--indigo-500); }
+  .pf-gradient {
+    border-color: transparent;
+    background: linear-gradient(var(--surface), var(--surface)) padding-box, var(--gradient-brand) border-box;
+  }
+  .platform-icon {
+    width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--color-primary-soft);
+    color: var(--amber-600); display: flex; align-items: center; justify-content: center;
+  }
+  .pf-teal .platform-icon { background: var(--color-accent-soft); color: var(--teal-600); }
+  .pf-indigo .platform-icon, .pf-gradient .platform-icon { background: var(--color-secondary-soft); color: var(--indigo-600); }
+  :global([data-theme="dark"]) .pf-amber .platform-icon { color: var(--amber-400); }
+  :global([data-theme="dark"]) .pf-teal .platform-icon { color: var(--teal-400); }
+  :global([data-theme="dark"]) .pf-indigo .platform-icon, :global([data-theme="dark"]) .pf-gradient .platform-icon { color: var(--indigo-400); }
+  .platform-icon :global(svg) { width: 20px; height: 20px; }
+  .pf-gradient .platform-icon { background: var(--gradient-soft); }
+  .pf-gradient .platform-icon :global(svg) { stroke: url(#g); }
+  .platform-card h3 { font-size: 1.05rem; }
+  .platform-card p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55; }
+
   /* ── Adoption layer ──────────────────────────────────────────────────── */
   .adoption-section { padding: 104px 0; background: var(--surface-subtle); border-bottom: 1px solid var(--border); }
   .adoption-grid { display: grid; grid-template-columns: 1fr; gap: 56px; align-items: center; }
@@ -732,10 +786,8 @@ const contact = {
   .cc-mid { width: 74%; height: 74%; z-index: 1; border: 1.5px dashed var(--border-strong); background: var(--surface); }
   .cc-core {
     width: 62%; height: 62%; flex-direction: column; gap: 6px; text-align: center;
-    background: var(--surface-inverse); color: var(--text-inverse); box-shadow: var(--shadow-lg);
+    background: var(--gradient-brand); color: var(--on-secondary); box-shadow: var(--shadow-lg);
   }
-  .cc-core-icon { display: inline-flex; color: var(--amber-400); }
-  .cc-core-icon :global(svg) { width: 30px; height: 30px; }
   .cc-core-text { font-family: var(--font-display); font-weight: 700; font-size: 0.92rem; line-height: 1.15; }
   .cc-ring-label {
     position: absolute; left: 50%; transform: translateX(-50%);
@@ -745,7 +797,7 @@ const contact = {
   }
   .cc-label-outer { top: -2px; color: var(--amber-600); }
   :global([data-theme="dark"]) .cc-label-outer { color: var(--amber-400); }
-  .cc-label-mid { top: 12%; color: var(--text-secondary); font-size: 0.58rem; }
+  .cc-label-mid { top: -9px; color: var(--text-secondary); font-size: 0.58rem; }
   .cc-node { position: absolute; width: 9px; height: 9px; border-radius: 50%; }
   .cc-node-1 { top: 6%; right: 20%; background: var(--amber-500); box-shadow: 0 0 0 4px var(--color-primary-soft); }
   .cc-node-2 { bottom: 14%; left: 8%; background: var(--teal-500); box-shadow: 0 0 0 4px var(--color-accent-soft); }
@@ -777,7 +829,7 @@ const contact = {
   /* ── Team ────────────────────────────────────────────────────────────── */
   .team-section { padding: 104px 0; background: var(--surface-subtle); border-bottom: 1px solid var(--border); }
   .team-grid { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 860px; margin-inline: auto; }
-  @media (min-width: 720px) { .team-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 720px) { .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   .member {
     background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
     padding: 32px 28px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px;
@@ -813,13 +865,6 @@ const contact = {
   .member-li:hover { color: var(--color-secondary); }
   .member-li :global(svg) { width: 16px; height: 16px; }
 
-  .team-subhead {
-    text-align: center; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted);
-    margin: 56px 0 22px;
-  }
-  .advisors-grid { max-width: 760px; margin-inline: auto; }
-  @media (min-width: 720px) { .advisors-grid { grid-template-columns: repeat(2, 1fr); } }
 
   /* ── Proof ───────────────────────────────────────────────────────────── */
   .proof-section { padding: 104px 0; background: var(--surface); border-bottom: 1px solid var(--border); }
@@ -963,7 +1008,7 @@ const contact = {
     .brand-mark { height: 22px; }
     .hero-logo { height: 50px; }
     .btn-cta { font-size: 0.8rem; padding: 0.45rem 0.85rem; }
-    .approach-section, .adoption-section, .principles-section,
+    .approach-section, .platform-section, .adoption-section, .principles-section,
     .team-section, .proof-section, .demos-section,
     .integrations-section, .pilot-section { padding: 60px 0; }
     .ways { margin-top: 56px; padding-top: 48px; }
