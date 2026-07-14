@@ -1119,32 +1119,33 @@ const contact = {
   });
 </script>
 
-<!-- Pilot form submission (posts to Supabase; graceful no-op if unconfigured) -->
-<script define:vars={{ supabaseUrl: import.meta.env.PUBLIC_SUPABASE_URL, supabaseKey: import.meta.env.PUBLIC_SUPABASE_ANON_KEY }}>
-  // Requires a Supabase table `pilot_leads` with columns:
-  //   name text, company text, role text, email text, phone text, pain text
-  // (and an RLS policy allowing anon inserts, like the existing waitlist table).
+<!-- Pilot form submission (emails hello@mateos.ai via Web3Forms; graceful no-op if unconfigured) -->
+<script define:vars={{ web3formsKey: import.meta.env.PUBLIC_WEB3FORMS_KEY }}>
+  // Requires a free access key from https://web3forms.com (created with hello@mateos.ai),
+  // set as PUBLIC_WEB3FORMS_KEY at build time. Web3Forms emails every submission to
+  // whichever address the key was created for.
   async function submitPilot(payload) {
-    if (!supabaseUrl || !supabaseKey) {
-      console.error("[pilot] Supabase config missing - set PUBLIC_SUPABASE_URL / PUBLIC_SUPABASE_ANON_KEY at build time.");
+    if (!web3formsKey) {
+      console.error("[pilot] Web3Forms key missing - set PUBLIC_WEB3FORMS_KEY at build time.");
       return false;
     }
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 15000);
     try {
-      const res = await fetch(`${supabaseUrl}/rest/v1/pilot_leads`, {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: {
-          apikey: supabaseKey,
-          Authorization: `Bearer ${supabaseKey}`,
-          "Content-Type": "application/json",
-          Prefer: "return=minimal",
-        },
-        body: JSON.stringify(payload),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: web3formsKey,
+          subject: `New pilot request: ${payload.company || payload.name}`,
+          from_name: payload.name,
+          ...payload,
+        }),
         signal: controller.signal,
       });
-      if (res.ok || res.status === 201 || res.status === 409) return true;
-      console.error(`[pilot] insert failed: ${res.status} ${res.statusText}`, await res.text().catch(() => ""));
+      const json = await res.json().catch(() => null);
+      if (res.ok && json?.success) return true;
+      console.error(`[pilot] submit failed: ${res.status}`, json);
       return false;
     } catch (err) {
       console.error("[pilot] request failed:", err);
