@@ -70,6 +70,18 @@
   --ink:var(--neutral-900);
 }
 
+/* ── Tokens: Hebrew override ─────────────────────────────────────────────
+   Bricolage Grotesque, Hanken Grotesk and JetBrains Mono carry no Hebrew
+   glyphs, so the Hebrew page swaps in Rubik (display) and Assistant (body).
+   Mono maps to the body face too: the mono role is only stylistic here, and a
+   Latin-only mono would fall back mid-string on Hebrew labels. Faces are
+   loaded from Layout.astro, only on the Hebrew page. */
+[lang="he"] {
+  --font-display:'Rubik','Bricolage Grotesque',system-ui,sans-serif;
+  --font-body:'Assistant','Hanken Grotesk',system-ui,-apple-system,sans-serif;
+  --font-mono:'Assistant','Hanken Grotesk',system-ui,sans-serif;
+}
+
 /* ── Tokens: dark override ──────────────────────────────────────────────── */
 [data-theme="dark"] {
   --surface:var(--neutral-900);
@@ -149,6 +161,8 @@ button{cursor:pointer;font-family:var(--font-body)}
   margin-bottom:16px;
 }
 [data-theme="dark"] .eyebrow{color:var(--amber-400)}
+/* Hebrew has no letter case, and wide tracking hurts its readability */
+[dir="rtl"] .eyebrow{text-transform:none;letter-spacing:0.01em}
 
 /* ── Theme picker ───────────────────────────────────────────────────────── */
 .theme-picker{position:relative;flex-shrink:0}
@@ -165,7 +179,7 @@ button{cursor:pointer;font-family:var(--font-body)}
 .theme-trigger:hover{opacity:1}
 .theme-icon{display:flex;align-items:center;justify-content:center;pointer-events:none}
 .theme-dropdown{
-  position:absolute;top:calc(100% + 8px);right:0;
+  position:absolute;top:calc(100% + 8px);inset-inline-end:0;
   background:var(--surface);
   border:1px solid var(--border);
   border-radius:var(--radius-md);
