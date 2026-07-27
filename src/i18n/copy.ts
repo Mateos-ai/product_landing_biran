@@ -142,17 +142,17 @@ export const en: Copy = {
     brandHome: "Mateos.ai home",
   },
   hero: {
-    h1a: "From Complexity to Efficiency:",
-    h1b: "AI Automation Built for Industrial Growth.",
+    h1a: "From Complexity and Skepticism to Efficiency and Innovation.",
+    h1b: "Automation combined with AI solutions purpose-built for industry.",
     tagline:
-      "We build the software, deploy it inside your organization, and take ownership of the result. Then we train your people to run it.",
+      "A team of experts walks you through it hand in hand, from defining and scoping the challenge to a complete, holistic answer, including the preparation, training, mentoring and onboarding your management and staff need to run the systems. Our aim is to keep it short, simple and efficient, and above all to produce measurable results.",
     kpi: "25% of our fee is tied to your KPIs.",
     cta: "See how it works ↓",
   },
   approach: {
     eyebrow: "What we do",
-    h2a: "Not Just Automation.",
-    h2b: "A Company Brain.",
+    h2a: "Not just point solutions for automation and AI,",
+    h2b: "but one comprehensive Company Brain.",
     sub: "A step-by-step journey, wrapped at every step by the change layer that makes it stick.",
     arrow: "→",
     journey: [
@@ -182,9 +182,9 @@ export const en: Copy = {
   },
   domains: {
     eyebrow: "Where we work",
-    h2a: "Every department,",
-    h2b: "one plant",
-    sub: "These are the domains inside the plant we work in. We start in the one that hurts most, then expand, and every department we add makes the others smarter.",
+    h2a: "From one department to the next,",
+    h2b: "and on to the whole plant",
+    sub: "These are the domains inside the plant we work in. We start where the pain is greatest and expand from there. Every department that goes through the transformation makes all the others smarter and more efficient.",
     items: [
       {
         title: "Production Floor",
@@ -299,9 +299,9 @@ export const en: Copy = {
   },
   platform: {
     eyebrow: "The platform",
-    h2a: "Software,",
-    h2b: "not just people",
-    sub: "Most of what you'll see in this space is an agency: people, billed by the hour. This is the technology we own and keep building on your behalf.",
+    h2a: "Software and brains,",
+    h2b: "not just people.",
+    sub: "Most of what you'll see in this space is an agency: one person, or a handful of people, billed by the hour. What makes the difference is the combination of the technology we own and a broad, experienced team of specialists.",
     items: [
       { title: "Agents", sub: "Purpose-built AI agents wired into the tools you already run on." },
       { title: "Learning", sub: "Every agent is evaluated and improves with every run." },
@@ -311,9 +311,9 @@ export const en: Copy = {
   },
   adoption: {
     eyebrow: "The adoption layer",
-    h2a: "Technology is not enough,",
-    h2b: "adoption is the missing piece.",
-    lead: "Connecting the technology is the part everyone talks about. Getting hundreds of people to change how they work every day is the part that decides whether it lasts. It is the wrapper around everything we build.",
+    h2a: "Technology alone is not enough,",
+    h2b: "adoption and mentoring are the missing piece.",
+    lead: "Connecting the technology is the part everyone talks about. But getting tens or hundreds of people to change how they work, and to get used to working differently day after day, is the hard part and the part that makes the difference. That is the wrapper around everything we do.",
     items: [
       { title: "A structured adoption program", sub: "Built around how your people actually work, not a generic rollout." },
       { title: "Training on the systems we build", sub: "Your teams learn the exact tools we deploy for you, hands-on." },
@@ -326,7 +326,7 @@ export const en: Copy = {
   },
   principles: {
     eyebrow: "How we work",
-    h2: "End to end, and on the ground",
+    h2: "End-to-end solutions, with feet on the ground",
     items: [
       {
         title: "Start at the sharpest pain",
@@ -350,7 +350,7 @@ export const en: Copy = {
     eyebrow: "The team",
     h2a: "Serious people who understand",
     h2b: "organizations like yours",
-    sub: "CEOs buy from people. Our founding partners bring senior experience across technology, business and change management inside complex organizations.",
+    sub: "Our founding partners bring senior experience across technology, business and change management inside complex organizations.",
     linkedin: "LinkedIn",
     linkedinAria: (name) => `${name} on LinkedIn`,
     members: [
@@ -524,17 +524,17 @@ export const he: Copy = {
     brandHome: "לדף הבית של Mateos.ai",
   },
   hero: {
-    h1a: "ממורכבות ליעילות:",
-    h1b: "אוטומציית AI שנבנתה לצמיחה תעשייתית.",
+    h1a: "ממורכבות וחשדנות להתייעלות וחדשנות.",
+    h1b: "אוטומציות משולבות בפתרונות AI ייעודיים לתעשייה.",
     tagline:
-      "אנחנו בונים את התוכנה, מטמיעים אותה בתוך הארגון שלכם, ולוקחים אחריות על התוצאה. ואז מכשירים את האנשים שלכם להפעיל אותה.",
+      "צוות מומחים ילווה אתכם יד ביד בהגדרת האתגר ואפיונו, ועד למתן מענה הוליסטי מקיף, דרך הכנה, הדרכה, חניכה והכשרה של צוות ההנהלה והעובדים להפעלת המערכות. היעד שלנו הנו לעשות זאת קצר, פשוט, יעיל, והכי חשוב מניב תוצאות מדידות.",
     kpi: "25% מהתשלום שלנו צמודים ל-KPI שלכם.",
     cta: "איך זה עובד ↓",
   },
   approach: {
     eyebrow: "מה אנחנו עושים",
-    h2a: "לא רק אוטומציה.",
-    h2b: "מוח ארגוני.",
+    h2a: "לא רק פתרונות אוטומציה ו-AI נקודתיים",
+    h2b: "אלא מוח ארגוני מקיף.",
     sub: "מסע צעד אחר צעד, שעטוף בכל שלב בשכבת ההטמעה שגורמת לו להישאר.",
     arrow: "←",
     journey: [
@@ -564,9 +564,9 @@ export const he: Copy = {
   },
   domains: {
     eyebrow: "איפה אנחנו פועלים",
-    h2a: "כל מחלקה,",
-    h2b: "מפעל אחד",
-    sub: "אלה התחומים בתוך המפעל שבהם אנחנו עוסקים. מתחילים בזה שהכי כואב ומתפשטים משם, וכל מחלקה שמצטרפת עושה את כל השאר חכמות יותר.",
+    h2a: "ממחלקה למחלקה",
+    h2b: "ועד למפעל כולו",
+    sub: "אלה התחומים בתוך המפעל שבהם אנו עוסקים. מתחילים במקום בו הכאב המשמעותי ביותר ומשם מתפשטים להמשך. כל מחלקה שעוברת טרנספורמציה עושה את כל השאר חכמות ויעילות יותר.",
     items: [
       {
         title: "רצפת ייצור",
@@ -653,9 +653,9 @@ export const he: Copy = {
   },
   platform: {
     eyebrow: "הפלטפורמה",
-    h2a: "תוכנה,",
-    h2b: "לא רק אנשים",
-    sub: "רוב מה שתראו בתחום הזה הוא סוכנות: אנשים, בחיוב לפי שעה. זו הטכנולוגיה שבבעלותנו, ושאנחנו ממשיכים לפתח בשבילכם.",
+    h2a: "מדובר בתוכנה ושכל",
+    h2b: "ולא רק באנשים.",
+    sub: "רוב מה שתראו בתחום הנו סוכנות של אדם אחד או מספר אנשים המחייבים לפי שעה. מה שעושה הבדל הוא השילוב בין הטכנולוגיה שבבעלותנו לצוות מומחים מגוון ומנוסה.",
     items: [
       { title: "סוכנים", sub: "סוכני AI שנבנים למטרה ומחוברים לכלים שאתם כבר עובדים איתם." },
       { title: "לימוד", sub: "כל סוכן נמדד ומשתפר בכל הרצה." },
@@ -665,9 +665,9 @@ export const he: Copy = {
   },
   adoption: {
     eyebrow: "שכבת ההטמעה",
-    h2a: "טכנולוגיה לא מספיקה,",
-    h2b: "ההטמעה היא החלק החסר.",
-    lead: "לחבר את הטכנולוגיה זה החלק שכולם מדברים עליו. לגרום למאות אנשים לשנות את אופן העבודה שלהם כל יום זה החלק שקובע אם זה מחזיק. זו העטיפה של כל מה שאנחנו בונים.",
+    h2a: "הטכנולוגיה לבדה איננה מספיקה,",
+    h2b: "ההטמעה והחניכה הם החלק החסר.",
+    lead: "לחבר את הפתרון הטכנולוגי זה מה שכולם מדברים עליו. אבל לגרום לעשרות ומאות אנשים לשנות את אופן העבודה שלהם ולהתרגל לעבוד אחרת יום אחר יום, זה החלק המאתגר ושעושה הבדל. וזו המעטפת של כל העשייה שלנו.",
     items: [
       { title: "תוכנית הטמעה מסודרת", sub: "בנויה סביב האופן שבו האנשים שלכם עובדים באמת, לא רולאאוט גנרי." },
       { title: "הדרכה על המערכות שאנחנו בונים", sub: "הצוותים שלכם לומדים בדיוק את הכלים שאנחנו מטמיעים אצלכם, בידיים." },
@@ -680,7 +680,7 @@ export const he: Copy = {
   },
   principles: {
     eyebrow: "איך אנחנו עובדים",
-    h2: "מקצה לקצה, ובשטח",
+    h2: "פתרונות מקצה לקצה ועם רגליים בקרקע",
     items: [
       {
         title: "מתחילים בכאב החד ביותר",
@@ -704,7 +704,7 @@ export const he: Copy = {
     eyebrow: "הצוות",
     h2a: "אנשים רציניים שמבינים",
     h2b: "ארגונים כמו שלכם",
-    sub: 'מנכ"לים קונים מאנשים. השותפים המייסדים שלנו מביאים ניסיון בכיר בטכנולוגיה, בעסקים ובניהול שינוי בתוך ארגונים מורכבים.',
+    sub: "השותפים המייסדים שלנו מביאים ניסיון בכיר בטכנולוגיה, בעסקים ובניהול שינוי בתוך ארגונים מורכבים.",
     linkedin: "לינקדאין",
     linkedinAria: (name) => `${name} בלינקדאין`,
     members: [
